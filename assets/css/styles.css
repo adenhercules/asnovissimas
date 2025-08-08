@@ -420,6 +420,24 @@ Loader customizado retirado de https://css-loaders.com/line/#l8
 }
 
 @media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra só no mobile */
+    }
+
+    .menu-links {
+        display: none; /* Esconde os links no mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(0,0,0,0.9);
+        width: 100%;
+        padding: 20px;
+    }
+
+    .menu-links.active {
+        display: flex; /* Mostra ao clicar no botão */
+    }
     .top-menu {
         flex-direction: column;
         align-items: flex-start;
@@ -677,15 +695,16 @@ Loader customizado retirado de https://css-loaders.com/line/#l8
 
 .top-menu {
     display: flex;
-    justify-content: flex-start;           /* alinha os itens à esquerda */
-    gap: 40px;                              /* espaço entre os itens */
-    background-color: rgba(0,0,0,0.5);      /* cor de fundo semitransparente */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    background-color: rgba(0,0,0,0.5);
     padding: 15px 20px;
-    position: fixed;                        /* mantém fixo no topo ao rolar */
+    position: fixed; /* fica sobre o conteúdo e sempre visível */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;                          /* fica por cima dos outros elementos */
+    z-index: 1000;
 }
 
 .top-menu a {
