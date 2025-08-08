@@ -65,3 +65,15 @@ function openModalArtistas(artista, texto) {
   const modal = new bootstrap.Modal(document.getElementById("artistaModal"));
   modal.show();
 }
+// ...existing code...
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("loading");
+    const preloader = document.getElementById("preload");
+    setTimeout(() => {
+        preloader.classList.add("preloader-invisible");
+        setTimeout(() => {
+            preloader.style.display = "none";
+            document.body.classList.remove("loading");
+        }, 400); // tempo para o fade-out
+    }, 1500); // tempo mínimo do loader
+});
